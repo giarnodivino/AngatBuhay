@@ -1,6 +1,9 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import DashboardInsightsPage from "../pages/DashboardInsightsPage";
+import LearnerAssessmentsPage from "../pages/LearnerAssessmentsPage";
 import LoginPage from "../pages/LoginPage";
 import RoutePlaceholder from "../pages/RoutePlaceholder";
+import TutorAssessmentScoresPage from "../pages/TutorAssessmentScoresPage";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +16,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/learners/assessments",
-    element: <RoutePlaceholder title="Learner assessment dashboard" />,
+    element: <LearnerAssessmentsPage />,
   },
   {
     path: "/learners/:learnerId",
@@ -21,11 +24,11 @@ export const router = createBrowserRouter([
   },
   {
     path: "/tutor/assessments/:assessmentId/scores",
-    element: <RoutePlaceholder title="Assessment score entry" />,
+    element: <TutorAssessmentScoresPage />,
   },
   {
     path: "/dashboard",
-    element: <RoutePlaceholder title="Overall dashboard and insights" />,
+    element: <DashboardInsightsPage />,
   },
   {
     path: "*",
