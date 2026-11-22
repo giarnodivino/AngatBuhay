@@ -1,5 +1,6 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import DashboardInsightsPage from "../pages/DashboardInsightsPage";
+import LearnerDetailPage from "../pages/LearnerDetailPage";
 import LearnerAssessmentsPage from "../pages/LearnerAssessmentsPage";
 import LoginPage from "../pages/LoginPage";
 import RoutePlaceholder from "../pages/RoutePlaceholder";
@@ -20,7 +21,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/learners/:learnerId",
-    element: <RoutePlaceholder title="Learner details" />,
+    element: <LearnerDetailPage />,
   },
   {
     path: "/tutor/assessments/:assessmentId/scores",
