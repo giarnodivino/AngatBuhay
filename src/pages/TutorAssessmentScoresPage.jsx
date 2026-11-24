@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import logo from "../assets/angat-buhay-logo.png";
 import {
+  removeSubmittedAssessmentResults,
   readSubmittedAssessmentResults,
   saveSubmittedAssessmentResults,
 } from "../data/assessmentResults";
@@ -211,6 +212,24 @@ function TutorAssessmentScoresPage() {
     } catch (error) {
       const reason = error instanceof Error ? ` ${error.message}` : "";
       setNotice(`Scores could not be saved in this browser.${reason}`);
+    }
+  }
+
+  function resetDemoScores() {
+    try {
+      if (assessmentDomain) {
+        removeSubmittedAssessmentResults(
+          assessmentDomain,
+          tutorLearners.map((learner) => learner.id),
+        );
+      }
+      window.localStorage.removeItem(storageKey);
+      setScores({ ...initialScores });
+      setSubmitted(false);
+      setNotice("Demo scores reset. You can enter and submit them again.");
+    } catch (error) {
+      const reason = error instanceof Error ? ` ${error.message}` : "";
+      setNotice(`Demo scores could not be reset.${reason}`);
     }
   }
 
@@ -485,6 +504,13 @@ function TutorAssessmentScoresPage() {
               {notice || `Sample learners · Changes ${submitted ? "submitted" : "not yet saved"}`}
             </div>
             <div className="flex items-center gap-3">
+              <button
+                className="h-[41px] rounded-md border border-[#f1c8dc] bg-white px-4 text-[11px] font-semibold text-[#c22a78] transition-colors hover:bg-[#fff5fa]"
+                onClick={resetDemoScores}
+                type="button"
+              >
+                Reset demo scores
+              </button>
               <button
                 className="h-[41px] rounded-md border border-[#e1e7ef] bg-white px-6 text-[11px] font-semibold text-[#405777] transition-colors hover:bg-[#f6f8fa] disabled:cursor-not-allowed disabled:opacity-50"
                 disabled={hasInvalidScores}

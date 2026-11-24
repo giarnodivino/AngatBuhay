@@ -9,6 +9,8 @@ npm install
 npm run dev
 ```
 
+Vercel is configured to rewrite direct route requests to the app entry point, so React Router URLs such as `/login` and `/learners/assessments` work when opened or shared directly.
+
 ## Routes
 
 - `/login` — login
@@ -21,7 +23,7 @@ npm run dev
 
 The login screen provides prototype role buttons: Admin opens the learner assessment dashboard, while Tutor opens the sample score-entry page. No authentication or account-specific access is implemented.
 
-The learner dashboard uses 12 pre-populated demo records from `src/data/learners.js`, with sample scores across all nine BKTK literacy domains. Its domain, grade, status, search, and sort controls update the results and summary metrics. The “All domains” selection shows each learner's average score across domains. Learner detail pages use the same submitted assessment results and save educator notes in browser `localStorage`. The five learners on the tutor score-entry roster have no pre- or post-assessment results in the main dashboard until the tutor submits scores. Submitted tutor scores are stored in browser `localStorage` and appear in the matching learner domain (converted from the tutor's 30-point scale to a percentage); drafts do not update admin results. This prototype data is shared only within the same browser origin/profile and is not a backend or secure account store. The `/dashboard` overview reads shared learner and submitted assessment data; its tutor and session delivery metrics are illustrative. Admin and tutor views provide a log-out shortcut to the role-selection login screen. Other routes are placeholders for later screens. The root route redirects to `/login`.
+The learner dashboard uses 12 pre-populated demo records from `src/data/learners.js`, with sample scores across all nine BKTK literacy domains. Its domain, grade, status, search, and sort controls update the results and summary metrics. The “All domains” selection shows each learner's average score across domains. Learner detail pages use the same submitted assessment results and save educator notes in browser `localStorage`. The five learners on the tutor score-entry roster have no pre- or post-assessment results in the main dashboard until the tutor submits scores. Submitted tutor scores are stored in browser `localStorage` and appear in the matching learner domain (converted from the tutor's 30-point scale to a percentage); drafts do not update admin results. Use **Reset demo scores** on the tutor score-entry page to clear its draft and submitted scores from the learner views and restore the sample inputs for another test. This prototype data is shared only within the same browser origin/profile and is not a backend or secure account store. The `/dashboard` overview reads shared learner and submitted assessment data; its tutor and session delivery metrics are illustrative. Admin and tutor views provide a log-out shortcut to the role-selection login screen. Other routes are placeholders for later screens. The root route redirects to `/login`.
 
 ## Project structure
 

@@ -55,3 +55,32 @@ export function saveSubmittedAssessmentResults(domain, scoresByLearner) {
   window.localStorage.setItem(storageKey, JSON.stringify(updatedResults));
   window.dispatchEvent(new Event(assessmentResultsUpdatedEvent));
 }
+
+export function removeSubmittedAssessmentResults(domain, learnerIds) {
+  if (!domains.includes(domain) || !Array.isArray(learnerIds)) {
+    throw new Error("Cannot reset scores for an unknown assessment domain.");
+  }
+
+  const updatedResults = readSubmittedAssessmentResults();
+  const domainResults = { ...updatedResults[domain] };
+
+  for (const learnerId of learnerIds) {
+    if (!learners.some((learner) => learner.id === learnerId)) {
+      throw new Error("Cannot reset scores for an unknown learner.");
+    }
+    delete domainResults[learnerId];
+  }
+
+  if (Object.keys(domainResults).length) {
+    updatedResults[domain] = domainResults;
+  } else {
+    delete updatedResults[domain];
+  }
+
+  if (Object.keys(updatedResults).length) {
+    window.localStorage.setItem(storageKey, JSON.stringify(updatedResults));
+  } else {
+    window.localStorage.removeItem(storageKey);
+  }
+  window.dispatchEvent(new Event(assessmentResultsUpdatedEvent));
+}
