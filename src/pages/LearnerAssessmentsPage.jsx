@@ -232,9 +232,9 @@ function LearnerAssessmentsPage() {
         <nav className="flex flex-col gap-1" aria-label="Main navigation">
           {[
             { label: "Overview", to: "/dashboard", icon: "overview" },
-            { label: "Learners", to: "/learners/assessments", icon: "learners" },
+            { label: "Learners", to: "/learners", icon: "learners" },
             { label: "Assessments", to: "/learners/assessments", icon: "assessments", active: true },
-            { label: "Reports", to: "/dashboard", icon: "reports" },
+            { label: "Capacity checklist", to: "/capacity-checklist", icon: "reports" },
           ].map((item) => (
             <Link
               key={item.label}

@@ -13,9 +13,11 @@ npm run dev
 
 - `/login` — login
 - `/learners/assessments` — learner assessment dashboard with sample records, filters, search, and sorting
+- `/learners` — simple learner directory linking to individual assessment stats
 - `/learners/:learnerId` — learner assessment comparison, gain, and locally saved educator follow-up notes
 - `/tutor/assessments/:assessmentId/scores` — tutor score entry with editable scores, draft persistence, and completion indicators
 - `/dashboard` — overall dashboard with grade outcomes, data insights, tutoring delivery, and follow-up priorities
+- `/capacity-checklist` — program capacity roadmap with 20 locally saved implementation checkpoints
 
 The login screen provides prototype role buttons: Admin opens the learner assessment dashboard, while Tutor opens the sample score-entry page. No authentication or account-specific access is implemented.
 

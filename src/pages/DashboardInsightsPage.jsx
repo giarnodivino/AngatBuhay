@@ -273,9 +273,9 @@ function DashboardInsightsPage() {
         <nav className="flex flex-col gap-1" aria-label="Main navigation">
           {[
             { label: "Overview", to: "/dashboard", icon: "overview" },
-            { label: "Learners", to: "/learners/assessments", icon: "learners" },
+            { label: "Learners", to: "/learners", icon: "learners" },
             { label: "Assessments", to: "/learners/assessments", icon: "assessments" },
-            { label: "Reports", to: "/dashboard", icon: "reports", active: true },
+            { label: "Capacity checklist", to: "/capacity-checklist", icon: "reports" },
           ].map((item) => (
             <Link
               aria-current={item.active ? "page" : undefined}
