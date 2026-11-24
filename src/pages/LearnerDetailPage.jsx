@@ -85,11 +85,11 @@ function ScoreCard({ label, score, tone, caption }) {
   return (
     <section className="relative min-h-[209px] rounded-lg border border-[#e1e7ef] bg-white px-5 pt-[21px] pb-4">
       <span className="absolute top-0 left-[22px] h-[2px] w-[45px]" style={{ backgroundColor: color }} />
-      <h2 className="m-0 text-[14px] font-semibold">{label}</h2>
-      <p className="mt-4 mb-0 text-[52px] leading-none font-semibold" style={{ color }}>
+      <h2 className="m-0 text-[16px] font-semibold">{label}</h2>
+      <p className="mt-4 mb-0 text-[58px] leading-none font-semibold" style={{ color }}>
         {scoreText}
       </p>
-      <p className="mt-2 mb-0 text-[11px] text-[#8592a7]">
+      <p className="mt-2 mb-0 text-[13px] text-[#8592a7]">
         {score === null ? "No score entered" : `${score} out of 100`}
       </p>
       <div className={`mt-3 h-[7px] overflow-hidden rounded-full ${track}`}>
@@ -100,11 +100,11 @@ function ScoreCard({ label, score, tone, caption }) {
           />
         )}
       </div>
-      <div className="mt-2 flex justify-between text-[9px] text-[#8592a7]">
+      <div className="mt-2 flex justify-between text-[11px] text-[#8592a7]">
         <span>0</span>
         <span>100</span>
       </div>
-      <p className="mt-3 mb-0 text-[10px] text-[#8592a7]">{caption}</p>
+      <p className="mt-3 mb-0 text-[12px] text-[#8592a7]">{caption}</p>
     </section>
   );
 }
@@ -231,12 +231,12 @@ function LearnerDetailView({ learnerId }) {
     return (
       <main className="flex min-h-screen items-center justify-center bg-[#f8fafc] p-6 font-[Arial,Helvetica,sans-serif] text-[#304a75]">
         <section className="max-w-md rounded-xl border border-[#e1e7ef] bg-white p-8 text-center">
-          <h1 className="m-0 text-xl font-semibold">Learner not found</h1>
-          <p className="mt-2 text-sm text-[#8592a7]">
+          <h1 className="m-0 text-2xl font-semibold">Learner not found</h1>
+          <p className="mt-2 text-base text-[#8592a7]">
             This learner record is not available.
           </p>
           <Link
-            className="mt-4 inline-block text-sm font-semibold text-[#e82991]"
+            className="mt-4 inline-block text-base font-semibold text-[#e82991]"
             to="/learners/assessments"
           >
             Back to learner results
@@ -254,7 +254,7 @@ function LearnerDetailView({ learnerId }) {
           className="h-auto w-[114px] max-[760px]:w-11"
           src={logo}
         />
-        <p className="mt-3 mb-4 pl-2 text-[9px] tracking-wide text-[#348d99] max-[760px]:hidden">
+        <p className="mt-3 mb-4 pl-2 text-[11px] tracking-wide text-[#348d99] max-[760px]:hidden">
           LEARNING &amp; IMPACT
         </p>
         <nav className="flex flex-col gap-1" aria-label="Main navigation">
@@ -266,7 +266,7 @@ function LearnerDetailView({ learnerId }) {
           ].map((item) => (
             <Link
               aria-current={item.active ? "page" : undefined}
-              className={`relative flex h-[39px] items-center gap-3 rounded-md px-3 text-[13px] no-underline transition-colors max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
+              className={`relative flex h-[39px] items-center gap-3 rounded-md px-3 text-[15px] no-underline transition-colors max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
                 item.active
                   ? "bg-[#fff0f7] font-semibold text-[#f02e91] before:absolute before:top-2 before:bottom-2 before:left-0 before:w-[3px] before:rounded-r before:bg-[#f02e91]"
                   : "text-[#326a83] hover:bg-white/20"
@@ -280,15 +280,15 @@ function LearnerDetailView({ learnerId }) {
           ))}
         </nav>
         <div className="mt-auto border-t border-white/65 pt-3">
-          <div className="flex h-[38px] items-center gap-3 px-1 text-[12px] text-[#326a83] max-[760px]:justify-center">
+          <div className="flex h-[38px] items-center gap-3 px-1 text-[14px] text-[#326a83] max-[760px]:justify-center">
             <span aria-hidden="true">⚙</span>
             <span className="max-[760px]:hidden">Settings</span>
           </div>
-          <div className="flex h-[38px] items-center gap-3 px-1 text-[12px] text-[#326a83] max-[760px]:justify-center">
+          <div className="flex h-[38px] items-center gap-3 px-1 text-[14px] text-[#326a83] max-[760px]:justify-center">
             <span aria-hidden="true">ⓘ</span>
             <span className="max-[760px]:hidden">Help &amp; resources</span>
           </div>
-          <p className="mt-3 mb-0 px-1 text-[9px] text-[#348d99] max-[760px]:hidden">
+          <p className="mt-3 mb-0 px-1 text-[11px] text-[#348d99] max-[760px]:hidden">
             Angat Buhay · Education
           </p>
         </div>
@@ -296,18 +296,18 @@ function LearnerDetailView({ learnerId }) {
 
       <div className="min-w-0 flex-1">
         <header className="flex h-[60px] items-center justify-between border-b border-[#e8edf2] bg-white px-8 max-[760px]:px-4">
-          <div className="flex items-center gap-3 text-[11px] text-[#8592a7]">
+          <div className="flex items-center gap-3 text-[13px] text-[#8592a7]">
             <span className="max-[500px]:hidden">Program workspace</span>
             <span className="max-[500px]:hidden">/</span>
             <strong className="font-semibold text-[#304a75]">BKTK</strong>
           </div>
-          <div className="flex items-center gap-5 text-[11px]">
-            <span className="rounded-md bg-[#f3f5f8] px-3 py-1.5 text-[10px] text-[#71809a]">
+          <div className="flex items-center gap-5 text-[13px]">
+            <span className="rounded-md bg-[#f3f5f8] px-3 py-1.5 text-[12px] text-[#71809a]">
               Sample data
             </span>
             <span className="font-semibold max-[500px]:hidden">Program coordinator</span>
             <button
-              className="text-[10px] font-semibold text-[#e82991] hover:underline"
+              className="text-[12px] font-semibold text-[#e82991] hover:underline"
               onClick={() => navigate("/login")}
               type="button"
             >
@@ -318,27 +318,27 @@ function LearnerDetailView({ learnerId }) {
 
         <div className="mx-auto max-w-[1500px] px-[31px] pt-[20px] pb-6 max-[760px]:px-4">
           {(submittedState.error || notesState.error) && (
-            <p className="mb-3 rounded-md bg-[#fff2df] px-3 py-2 text-xs text-[#8b6739]" role="alert">
+            <p className="mb-3 rounded-md bg-[#fff2df] px-3 py-2 text-sm text-[#8b6739]" role="alert">
               {submittedState.error || notesState.error}
             </p>
           )}
           <div className="flex items-start justify-between gap-4">
             <div>
               <Link
-                className="inline-flex items-center gap-2 text-[11px] text-[#299ea6] no-underline hover:underline"
+                className="inline-flex items-center gap-2 text-[13px] text-[#299ea6] no-underline hover:underline"
                 to="/learners/assessments"
               >
                 <span aria-hidden="true">←</span> All learner results
               </Link>
               <div className="mt-3 flex flex-wrap items-center gap-3">
-                <h1 className="m-0 text-[27px] leading-tight font-semibold tracking-[-0.4px]">
+                <h1 className="m-0 text-[30px] leading-tight font-semibold tracking-[-0.4px]">
                   {learner.name}
                 </h1>
-                <span className={`rounded-md px-3 py-1 text-[10px] font-semibold ${statusClass}`}>
+                <span className={`rounded-md px-3 py-1 text-[12px] font-semibold ${statusClass}`}>
                   {status}
                 </span>
               </div>
-              <p className="mt-2 mb-0 text-[11px] text-[#8592a7]">
+              <p className="mt-2 mb-0 text-[13px] text-[#8592a7]">
                 <span className="font-medium text-[#304a75]">{learner.id}</span>
                 <span className="mx-3">•</span>
                 Grade {learner.grade}
@@ -348,7 +348,7 @@ function LearnerDetailView({ learnerId }) {
             </div>
             <div className="flex flex-col items-end gap-2">
               <button
-                className="flex h-[35px] items-center gap-2 rounded-md bg-[#e82991] px-4 text-[10px] font-semibold text-white transition-colors hover:bg-[#d82483]"
+                className="flex h-[35px] items-center gap-2 rounded-md bg-[#e82991] px-4 text-[12px] font-semibold text-white transition-colors hover:bg-[#d82483]"
                 onClick={exportResults}
                 type="button"
               >
@@ -357,13 +357,13 @@ function LearnerDetailView({ learnerId }) {
                 </svg>
                 Export results
               </button>
-              <span className="text-[9px] text-[#8592a7]">Sample learner record</span>
+              <span className="text-[11px] text-[#8592a7]">Sample learner record</span>
             </div>
           </div>
 
           <div className="mt-[30px] mb-[14px] flex items-center justify-between gap-4">
-            <h2 className="m-0 text-[13px] font-semibold">Assessment comparison</h2>
-            <span className="text-[10px] text-[#8592a7]">
+            <h2 className="m-0 text-[15px] font-semibold">Assessment comparison</h2>
+            <span className="text-[12px] text-[#8592a7]">
               Overall assessment · Scores out of 100
             </span>
           </div>
@@ -382,22 +382,22 @@ function LearnerDetailView({ learnerId }) {
               tone="pink"
             />
             <section className="min-h-[209px] rounded-lg border border-[#d4e9e9] bg-[#eff8f7] px-5 pt-[21px] pb-4">
-              <h2 className="m-0 text-[14px] font-semibold">Learning gain</h2>
-              <p className="mt-4 mb-0 flex items-baseline gap-2 text-[52px] leading-none font-semibold text-[#298d96]">
+              <h2 className="m-0 text-[16px] font-semibold">Learning gain</h2>
+              <p className="mt-4 mb-0 flex items-baseline gap-2 text-[58px] leading-none font-semibold text-[#298d96]">
                 {gain === null ? "—" : `${gain > 0 ? "+" : ""}${gain}`}
-                <span className="text-[17px]">pp</span>
+                <span className="text-[19px]">pp</span>
               </p>
-              <p className="mt-2 mb-0 text-[11px] text-[#299ea6]">
+              <p className="mt-2 mb-0 text-[13px] text-[#299ea6]">
                 Percentage-point increase
               </p>
-              <p className="mt-4 mb-3 text-[10px] text-[#8592a7]">
+              <p className="mt-4 mb-3 text-[12px] text-[#8592a7]">
                 {assessment.postScore === null || assessment.preScore === null
                   ? "Gain is available after both assessments."
                   : `${assessment.postScore}% post − ${assessment.preScore}% pre = ${
                       gain > 0 ? "+" : ""
                     }${gain} pp`}
               </p>
-              <span className={`block rounded-md px-3 py-1 text-[9px] ${
+              <span className={`block rounded-md px-3 py-1 text-[11px] ${
                 status === "Completed"
                   ? "bg-[#dff0eb] text-[#398b71]"
                   : "bg-white/70 text-[#71809a]"
@@ -415,18 +415,18 @@ function LearnerDetailView({ learnerId }) {
 
           <section className="mt-[22px] overflow-hidden rounded-lg border border-[#e1e7ef] bg-white">
             <div className="border-b border-[#e1e7ef] px-5 py-[15px]">
-              <h2 className="m-0 text-[14px] font-semibold">Educator follow-up notes</h2>
-              <p className="mt-1 mb-0 text-[11px] text-[#8592a7]">
+              <h2 className="m-0 text-[16px] font-semibold">Educator follow-up notes</h2>
+              <p className="mt-1 mb-0 text-[13px] text-[#8592a7]">
                 Record observations and plan the next steps for this learner.
               </p>
             </div>
             <div className="grid grid-cols-[1.8fr_1fr] gap-6 px-5 py-[15px] max-[760px]:grid-cols-1">
               <div>
-                <label className="mb-2 block text-[10px] font-semibold" htmlFor="follow-up-note">
+                <label className="mb-2 block text-[12px] font-semibold" htmlFor="follow-up-note">
                   New follow-up note
                 </label>
                 <textarea
-                  className="box-border min-h-[96px] w-full resize-y rounded-md border border-[#d7e0eb] bg-white p-3 text-[11px] text-[#304a75] outline-[#50bdc1] placeholder:text-[#8996aa]"
+                  className="box-border min-h-[96px] w-full resize-y rounded-md border border-[#d7e0eb] bg-white p-3 text-[13px] text-[#304a75] outline-[#50bdc1] placeholder:text-[#8996aa]"
                   id="follow-up-note"
                   onChange={(event) => {
                     setNoteText(event.target.value);
@@ -436,11 +436,11 @@ function LearnerDetailView({ learnerId }) {
                   value={noteText}
                 />
                 <div className="mt-2 flex items-center justify-between gap-3">
-                  <span aria-live="polite" className="text-[10px] text-[#8592a7]">
+                  <span aria-live="polite" className="text-[12px] text-[#8592a7]">
                     {noteNotice || (noteText.trim() ? "Ready to save." : "Add a note to enable saving.")}
                   </span>
                   <button
-                    className="h-[32px] rounded-md bg-[#f0f3f6] px-5 text-[10px] font-semibold text-[#405777] transition-colors hover:bg-[#e6ebf0] disabled:cursor-not-allowed disabled:opacity-60"
+                    className="h-[32px] rounded-md bg-[#f0f3f6] px-5 text-[12px] font-semibold text-[#405777] transition-colors hover:bg-[#e6ebf0] disabled:cursor-not-allowed disabled:opacity-60"
                     disabled={!noteText.trim()}
                     onClick={saveNote}
                     type="button"
@@ -451,19 +451,19 @@ function LearnerDetailView({ learnerId }) {
               </div>
 
               <div className="border-l border-[#e1e7ef] pl-6 max-[760px]:border-l-0 max-[760px]:border-t max-[760px]:pl-0 max-[760px]:pt-4">
-                <h3 className="m-0 flex items-center gap-2 text-[10px] font-semibold">
+                <h3 className="m-0 flex items-center gap-2 text-[12px] font-semibold">
                   Saved notes
-                  <span className="rounded bg-[#f0f3f7] px-2 py-0.5 text-[9px] text-[#71809a]">
+                  <span className="rounded bg-[#f0f3f7] px-2 py-0.5 text-[11px] text-[#71809a]">
                     {notesState.notes.length}
                   </span>
                 </h3>
                 {notesState.notes.length === 0 ? (
                   <>
-                    <p className="mt-6 mb-0 text-[13px] font-semibold">No notes yet</p>
-                    <p className="mt-2 mb-0 text-[10px] text-[#8592a7]">
+                    <p className="mt-6 mb-0 text-[15px] font-semibold">No notes yet</p>
+                    <p className="mt-2 mb-0 text-[12px] text-[#8592a7]">
                       Educator follow-up notes will appear here once added.
                     </p>
-                    <p className="mt-8 mb-0 text-[10px] text-[#8592a7]">
+                    <p className="mt-8 mb-0 text-[12px] text-[#8592a7]">
                       No educator notes have been provided.
                     </p>
                   </>
@@ -471,10 +471,10 @@ function LearnerDetailView({ learnerId }) {
                   <ul className="mt-3 max-h-[175px] space-y-3 overflow-y-auto p-0">
                     {notesState.notes.map((note) => (
                       <li className="list-none border-b border-[#e8edf2] pb-3 last:border-0" key={note.id}>
-                        <p className="m-0 whitespace-pre-wrap text-[11px] leading-[1.5] text-[#405777]">
+                        <p className="m-0 whitespace-pre-wrap text-[13px] leading-[1.5] text-[#405777]">
                           {note.text}
                         </p>
-                        <time className="mt-1 block text-[9px] text-[#8592a7]" dateTime={note.createdAt}>
+                        <time className="mt-1 block text-[11px] text-[#8592a7]" dateTime={note.createdAt}>
                           {new Date(note.createdAt).toLocaleString()}
                         </time>
                       </li>
@@ -483,7 +483,7 @@ function LearnerDetailView({ learnerId }) {
                 )}
               </div>
             </div>
-            <div className="border-t border-[#e8edf2] px-5 py-2 text-[9px] text-[#8592a7]">
+            <div className="border-t border-[#e8edf2] px-5 py-2 text-[11px] text-[#8592a7]">
               Sample learner data · No assessment dates or actual educator notes included.
             </div>
           </section>

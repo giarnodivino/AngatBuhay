@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/angat-buhay-logo.png";
-import {
-  assessmentResultsUpdatedEvent,
-  readSubmittedAssessmentResults,
-} from "../data/assessmentResults";
+import { assessmentResultsUpdatedEvent, readSubmittedAssessmentResults } from "../data/assessmentResults";
 import { domains, getAssessmentStatus, getLearnerAssessment, learners } from "../data/learners";
 
 const grades = [...new Set(learners.map((learner) => learner.grade))].sort();
@@ -69,9 +66,7 @@ function NavIcon({ name }) {
 }
 
 function getGain(learner) {
-  return learner.preScore === null || learner.postScore === null
-    ? null
-    : learner.postScore - learner.preScore;
+  return learner.preScore === null || learner.postScore === null ? null : learner.postScore - learner.preScore;
 }
 
 function average(items, getValue) {
@@ -105,7 +100,7 @@ function StatusBadge({ status }) {
   };
 
   return (
-    <span className={`inline-flex min-w-[100px] rounded-md px-2.5 py-1 text-[10px] font-medium ${styles[status]}`}>
+    <span className={`inline-flex min-w-[100px] rounded-md px-2.5 py-1 text-[12px] font-medium ${styles[status]}`}>
       {status}
     </span>
   );
@@ -114,9 +109,9 @@ function StatusBadge({ status }) {
 function SummaryCard({ label, value, caption, valueClass = "" }) {
   return (
     <section className="box-border h-[85px] min-w-0 rounded-lg border border-[#e1e7ef] bg-white px-4 py-[10px]">
-      <p className="m-0 truncate text-[10px] leading-3 text-[#71809a]">{label}</p>
-      <p className={`mt-1 mb-0 text-[27px] leading-none font-semibold ${valueClass}`}>{value}</p>
-      <p className="mt-2 mb-0 truncate text-[10px] leading-3 text-[#8592a7]">{caption}</p>
+      <p className="m-0 truncate text-[12px] leading-3 text-[#71809a]">{label}</p>
+      <p className={`mt-1 mb-0 text-[30px] leading-none font-semibold ${valueClass}`}>{value}</p>
+      <p className="mt-2 mb-0 truncate text-[12px] leading-3 text-[#8592a7]">{caption}</p>
     </section>
   );
 }
@@ -195,9 +190,7 @@ function LearnerAssessmentsPage() {
     });
   }, [category, grade, search, sort, status, submittedState.results]);
 
-  const pairedLearners = filteredLearners.filter(
-    (learner) => learner.preScore !== null && learner.postScore !== null,
-  );
+  const pairedLearners = filteredLearners.filter((learner) => learner.preScore !== null && learner.postScore !== null);
   const averagePre = average(pairedLearners, (learner) => learner.preScore);
   const averagePost = average(pairedLearners, (learner) => learner.postScore);
   const averageGain = average(pairedLearners, getGain);
@@ -219,13 +212,13 @@ function LearnerAssessmentsPage() {
   );
 
   const selectClass =
-    "h-[30px] min-w-[125px] rounded-md border border-[#e1e7ef] bg-white px-2.5 text-[10px] text-[#445575] outline-[#50bdc1]";
+    "h-[30px] min-w-[125px] rounded-md border border-[#e1e7ef] bg-white px-2.5 text-[12px] text-[#445575] outline-[#50bdc1]";
 
   return (
     <main className="flex min-h-screen bg-[#f8fafc] font-[Arial,Helvetica,sans-serif] text-[#304a75]">
       <aside className="sticky top-0 flex h-screen w-[204px] shrink-0 flex-col bg-[#54bdc0] px-3 pt-5 pb-3 max-[760px]:w-[72px] max-[760px]:items-center">
         <img className="h-auto w-[114px] max-[760px]:w-11" src={logo} alt="Angat Buhay" />
-        <p className="mt-3 mb-4 pl-2 text-[9px] tracking-wide text-[#348d99] max-[760px]:hidden">
+        <p className="mt-3 mb-4 pl-2 text-[11px] tracking-wide text-[#348d99] max-[760px]:hidden">
           LEARNING &amp; IMPACT
         </p>
 
@@ -239,7 +232,7 @@ function LearnerAssessmentsPage() {
             <Link
               key={item.label}
               aria-current={item.active ? "page" : undefined}
-              className={`relative flex h-[39px] items-center gap-3 rounded-md px-3 text-[13px] no-underline transition-colors max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
+              className={`relative flex h-[39px] items-center gap-3 rounded-md px-3 text-[15px] no-underline transition-colors max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
                 item.active
                   ? "bg-[#fff0f7] font-semibold text-[#f02e91] before:absolute before:top-2 before:bottom-2 before:left-0 before:w-[3px] before:rounded-r before:bg-[#f02e91]"
                   : "text-[#326a83] hover:bg-white/20"
@@ -254,35 +247,32 @@ function LearnerAssessmentsPage() {
         </nav>
 
         <div className="mt-auto border-t border-white/65 pt-3">
-          <div className="flex h-[38px] items-center gap-3 px-1 text-[12px] text-[#326a83] max-[760px]:justify-center">
+          <div className="flex h-[38px] items-center gap-3 px-1 text-[14px] text-[#326a83] max-[760px]:justify-center">
             <NavIcon name="settings" />
             <span className="max-[760px]:hidden">Settings</span>
           </div>
-          <div className="flex h-[38px] items-center gap-3 px-1 text-[12px] text-[#326a83] max-[760px]:justify-center">
+          <div className="flex h-[38px] items-center gap-3 px-1 text-[14px] text-[#326a83] max-[760px]:justify-center">
             <NavIcon name="help" />
             <span className="max-[760px]:hidden">Help &amp; resources</span>
           </div>
-          <p className="mt-3 mb-0 px-1 text-[9px] text-[#348d99] max-[760px]:hidden">Angat Buhay · Education</p>
+          <p className="mt-3 mb-0 px-1 text-[11px] text-[#348d99] max-[760px]:hidden">Angat Buhay · Education</p>
         </div>
       </aside>
 
       <div className="min-w-0 flex-1">
         <header className="flex h-[60px] items-center justify-between border-b border-[#e8edf2] bg-white px-8 max-[760px]:px-4">
-          <div className="flex items-center gap-3 text-[11px] text-[#8592a7]">
-            <span className="text-[17px] text-[#299ea6]" aria-hidden="true">
+          <div className="flex items-center gap-3 text-[13px] text-[#8592a7]">
+            <span className="text-[19px] text-[#299ea6]" aria-hidden="true">
               ▣
             </span>
             <span className="max-[500px]:hidden">Program workspace</span>
             <span className="max-[500px]:hidden">/</span>
             <strong className="font-semibold text-[#304a75]">BKTK</strong>
           </div>
-          <div className="flex items-center gap-5 text-[11px] max-[500px]:gap-2">
-            <span className="rounded-md bg-[#f3f5f8] px-3 py-1.5 text-[10px] text-[#71809a]">Sample data</span>
+          <div className="flex items-center gap-5 text-[13px] max-[500px]:gap-2">
+            <span className="rounded-md bg-[#f3f5f8] px-3 py-1.5 text-[12px] text-[#71809a]">Sample data</span>
             <span className="font-semibold max-[500px]:hidden">Program coordinator</span>
-            <Link
-              className="text-[10px] font-semibold text-[#e82991] no-underline hover:underline"
-              to="/login"
-            >
+            <Link className="text-[12px] font-semibold text-[#e82991] no-underline hover:underline" to="/login">
               Log out
             </Link>
           </div>
@@ -290,19 +280,19 @@ function LearnerAssessmentsPage() {
 
         <div className="mx-auto max-w-[1500px] px-[31px] pt-[19px] pb-6 max-[760px]:px-4">
           {submittedState.error && (
-            <p className="mb-3 rounded-md bg-[#fff2df] px-3 py-2 text-xs text-[#8b6739]" role="alert">
+            <p className="mb-3 rounded-md bg-[#fff2df] px-3 py-2 text-sm text-[#8b6739]" role="alert">
               {submittedState.error}
             </p>
           )}
           <div className="mb-[10px] flex items-start justify-between gap-4">
             <div>
-              <h1 className="m-0 text-[25px] leading-tight font-semibold tracking-[-0.4px]">Learner assessments</h1>
-              <p className="mt-1 mb-0 text-[12px] text-[#8592a7]">
+              <h1 className="m-0 text-[28px] leading-tight font-semibold tracking-[-0.4px]">Learner Assessments</h1>
+              <p className="mt-1 mb-0 text-[14px] text-[#8592a7]">
                 BKTK program <span className="mx-1.5">/</span> Compare starting points with learning progress.
               </p>
             </div>
             <button
-              className="flex h-[35px] shrink-0 items-center gap-2 rounded-md bg-[#e82991] px-4 text-[11px] font-semibold text-white max-[500px]:px-2"
+              className="flex h-[35px] shrink-0 items-center gap-2 rounded-md bg-[#e82991] px-4 text-[13px] font-semibold text-white max-[500px]:px-2"
               type="button"
             >
               <svg
@@ -370,8 +360,8 @@ function LearnerAssessmentsPage() {
               <option value="Awaiting post">Awaiting post</option>
             </select>
 
-            <span className="ml-2 text-[10px] text-[#8592a7]">Assessment: {category || "Overall"}</span>
-            <span className="ml-auto text-[10px] text-[#8592a7] max-[760px]:hidden">
+            <span className="ml-2 text-[12px] text-[#8592a7]">Assessment: {category || "Overall"}</span>
+            <span className="ml-auto text-[12px] text-[#8592a7] max-[760px]:hidden">
               Scores out of 100 · Gains in percentage points
             </span>
           </div>
@@ -407,12 +397,12 @@ function LearnerAssessmentsPage() {
             <section className="rounded-lg border border-[#e1e7ef] bg-white px-4 py-3">
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="m-0 text-[13px] font-semibold">How scores have shifted</h2>
-                  <p className="mt-1 mb-0 text-[10px] text-[#8592a7]">
+                  <h2 className="m-0 text-[15px] font-semibold">How scores have shifted</h2>
+                  <p className="mt-1 mb-0 text-[12px] text-[#8592a7]">
                     Score bands · {pairedLearners.length} learners with both assessments
                   </p>
                 </div>
-                <div className="flex items-center gap-5 pt-1 text-[9px] text-[#8592a7]">
+                <div className="flex items-center gap-5 pt-1 text-[11px] text-[#8592a7]">
                   <span className="flex items-center gap-1.5">
                     <i className="size-2 rounded-sm bg-[#70b9bc]" />
                     Pre
@@ -430,7 +420,7 @@ function LearnerAssessmentsPage() {
                   const postCount = scoreBandCount(pairedLearners, "postScore", min, max);
 
                   return (
-                    <div key={label} className="grid grid-cols-[78px_1fr_80px] items-center gap-3 text-[10px]">
+                    <div key={label} className="grid grid-cols-[78px_1fr_80px] items-center gap-3 text-[12px]">
                       <span className="font-medium">{label}</span>
                       <div className="space-y-1">
                         {[
@@ -456,18 +446,18 @@ function LearnerAssessmentsPage() {
             </section>
 
             <section className="rounded-lg border border-[#e1e7ef] bg-white px-4 py-[14px]">
-              <h2 className="m-0 text-[13px] font-semibold">Make the next step count</h2>
-              <p className="mt-1 mb-2.5 text-[10px] text-[#8592a7]">Follow-up rule: post-assessment below 75%</p>
+              <h2 className="m-0 text-[15px] font-semibold">Make the next step count</h2>
+              <p className="mt-1 mb-2.5 text-[12px] text-[#8592a7]">Follow-up rule: post-assessment below 75%</p>
               <div className="mb-2 flex min-h-[41px] items-center gap-3 rounded-md bg-[#fff7ed] px-3">
-                <strong className="text-[21px] leading-none text-[#b97822]">{supportCount}</strong>
-                <span className="text-[10px] leading-[1.4] text-[#8b6739]">
+                <strong className="text-[24px] leading-none text-[#b97822]">{supportCount}</strong>
+                <span className="text-[12px] leading-[1.4] text-[#8b6739]">
                   <b className="block font-semibold">learners need support</b>
                   Post-assessment scores below 75%
                 </span>
               </div>
               <div className="flex min-h-[41px] items-center gap-3 rounded-md bg-[#f1f4f9] px-3">
-                <strong className="text-[21px] leading-none text-[#304a75]">{pendingCount}</strong>
-                <span className="text-[10px] leading-[1.4] text-[#71809a]">
+                <strong className="text-[24px] leading-none text-[#304a75]">{pendingCount}</strong>
+                <span className="text-[12px] leading-[1.4] text-[#71809a]">
                   <b className="block font-semibold text-[#405777]">assessment pending</b>
                   Pre- or post-assessment scores not yet entered
                 </span>
@@ -478,13 +468,13 @@ function LearnerAssessmentsPage() {
           <section className="mt-[14px] overflow-hidden rounded-lg border border-[#e1e7ef] bg-white">
             <div className="flex flex-wrap items-center justify-between gap-3 px-4 pt-2 pb-1">
               <div>
-                <h2 className="m-0 flex items-center gap-2 text-[13px] font-semibold">
-                  Learner results
-                  <span className="rounded bg-[#f0f3f7] px-2 py-0.5 text-[9px] text-[#71809a]">
+                <h2 className="m-0 flex items-center gap-2 text-[15px] font-semibold">
+                  Learner Results
+                  <span className="rounded bg-[#f0f3f7] px-2 py-0.5 text-[11px] text-[#71809a]">
                     {filteredLearners.length}
                   </span>
                 </h2>
-                <p className="mt-0.5 mb-0 text-[10px] text-[#8592a7]">Individual pre- and post-assessment comparison</p>
+                <p className="mt-0.5 mb-0 text-[12px] text-[#8592a7]">Individual pre- and post-assessment comparison</p>
               </div>
 
               <div className="flex flex-wrap items-center gap-2">
@@ -502,7 +492,7 @@ function LearnerAssessmentsPage() {
                     <path d="m16 16 4 4" />
                   </svg>
                   <input
-                    className="h-[30px] w-[222px] rounded-md border border-[#e1e7ef] bg-white pr-2 pl-8 text-[10px] outline-[#50bdc1] placeholder:text-[#8592a7] max-[500px]:w-full"
+                    className="h-[30px] w-[222px] rounded-md border border-[#e1e7ef] bg-white pr-2 pl-8 text-[12px] outline-[#50bdc1] placeholder:text-[#8592a7] max-[500px]:w-full"
                     onChange={(event) => setSearch(event.target.value)}
                     placeholder="Search learner or ID"
                     type="search"
@@ -527,8 +517,8 @@ function LearnerAssessmentsPage() {
             </div>
 
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[850px] border-collapse text-left text-[10px]">
-                <thead className="bg-[#f8fafc] text-[9px] text-[#8592a7]">
+              <table className="w-full min-w-[850px] border-collapse text-left text-[12px]">
+                <thead className="bg-[#f8fafc] text-[11px] text-[#8592a7]">
                   <tr>
                     <th className="px-4 py-2 font-medium">Learner name</th>
                     <th className="px-3 py-2 font-medium">Learner ID</th>
@@ -573,7 +563,7 @@ function LearnerAssessmentsPage() {
                         <td className="px-3 py-[2px]">
                           <StatusBadge status={getAssessmentStatus(learner)} />
                         </td>
-                        <td className="px-2 py-[2px] text-center text-base text-[#8592a7]">›</td>
+                        <td className="px-2 py-[2px] text-center text-lg text-[#8592a7]">›</td>
                       </tr>
                     );
                   })}
@@ -587,7 +577,7 @@ function LearnerAssessmentsPage() {
                 </tbody>
               </table>
             </div>
-            <div className="flex flex-wrap justify-between gap-2 border-t border-[#e8edf2] px-4 py-2.5 text-[9px] text-[#8592a7]">
+            <div className="flex flex-wrap justify-between gap-2 border-t border-[#e8edf2] px-4 py-2.5 text-[11px] text-[#8592a7]">
               <span aria-live="polite">
                 Showing {filteredLearners.length} {filteredLearners.length === 1 ? "learner" : "learners"}
               </span>

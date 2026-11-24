@@ -234,7 +234,7 @@ function TutorAssessmentScoresPage() {
   }
 
   const scoreInputClass =
-    "h-[36px] w-full rounded-md border border-[#e1e7ef] bg-white px-2.5 pr-14 text-[12px] text-[#3d5274] outline-[#50bdc1] placeholder:text-[#8996aa] focus:border-[#50bdc1]";
+    "h-[36px] w-full rounded-md border border-[#e1e7ef] bg-white px-2.5 pr-14 text-[14px] text-[#3d5274] outline-[#50bdc1] placeholder:text-[#8996aa] focus:border-[#50bdc1]";
 
   return (
     <main className="flex min-h-screen bg-[#fbfaf8] font-[Arial,Helvetica,sans-serif] text-[#304a75]">
@@ -244,10 +244,10 @@ function TutorAssessmentScoresPage() {
           className="h-auto w-[116px] max-[760px]:w-11"
           src={logo}
         />
-        <p className="mt-3 mb-5 pl-1 text-[9px] tracking-wide text-[#348d99] max-[760px]:hidden">
+        <p className="mt-3 mb-5 pl-1 text-[11px] tracking-wide text-[#348d99] max-[760px]:hidden">
           VOLUNTEER PORTAL
         </p>
-        <p className="mb-2 pl-1 text-[9px] tracking-wide text-[#348d99] max-[760px]:hidden">
+        <p className="mb-2 pl-1 text-[11px] tracking-wide text-[#348d99] max-[760px]:hidden">
           WORKSPACE
         </p>
 
@@ -260,7 +260,7 @@ function TutorAssessmentScoresPage() {
           ].map((item) => (
             <div
               aria-current={item.active ? "page" : undefined}
-              className={`relative flex h-10 items-center gap-3 rounded-md px-3 text-[12px] max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
+              className={`relative flex h-10 items-center gap-3 rounded-md px-3 text-[14px] max-[760px]:w-11 max-[760px]:justify-center max-[760px]:px-0 ${
                 item.active
                   ? "bg-[#fff0f7] font-semibold text-[#f02e91] before:absolute before:top-2 before:bottom-2 before:left-0 before:w-[3px] before:rounded-r before:bg-[#f02e91]"
                   : "text-[#326a83]"
@@ -275,17 +275,17 @@ function TutorAssessmentScoresPage() {
 
         <div className="mt-auto">
           <aside className="mb-8 rounded-lg bg-white/90 p-3 max-[760px]:hidden">
-            <p className="m-0 text-[11px] font-semibold">A little help?</p>
-            <p className="mt-1 mb-0 text-[10px] leading-[1.5] text-[#8592a7]">
+            <p className="m-0 text-[13px] font-semibold">A little help?</p>
+            <p className="mt-1 mb-0 text-[12px] leading-[1.5] text-[#8592a7]">
               View the assessment guide before you begin.
             </p>
           </aside>
-          <div className="border-t border-white/65 pt-4 text-[11px] max-[760px]:text-center">
+          <div className="border-t border-white/65 pt-4 text-[13px] max-[760px]:text-center">
             <p className="m-0 font-medium max-[760px]:hidden">Volunteer tutor</p>
-            <p className="mt-1 mb-0 text-[10px] text-[#348d99] max-[760px]:hidden">
+            <p className="mt-1 mb-0 text-[12px] text-[#348d99] max-[760px]:hidden">
               Tutor account
             </p>
-            <span className="hidden text-[10px] font-semibold text-[#326a83] max-[760px]:inline">
+            <span className="hidden text-[12px] font-semibold text-[#326a83] max-[760px]:inline">
               VT
             </span>
           </div>
@@ -294,17 +294,17 @@ function TutorAssessmentScoresPage() {
 
       <div className="min-w-0 flex-1">
         <header className="flex h-[69px] items-center justify-between border-b border-[#e8edf2] bg-white px-8 max-[760px]:px-4">
-          <div className="flex items-center gap-2 text-[11px] text-[#8592a7]">
+          <div className="flex items-center gap-2 text-[13px] text-[#8592a7]">
             <span>Workspace</span>
             <span>/</span>
             <span>Assessments</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="rounded-lg bg-[#fff0f7] px-5 py-2 text-[11px] font-semibold text-[#e72f91]">
+            <span className="rounded-lg bg-[#fff0f7] px-5 py-2 text-[13px] font-semibold text-[#e72f91]">
               Volunteer tutor
             </span>
             <button
-              className="text-[10px] font-semibold text-[#e72f91] hover:underline"
+              className="text-[12px] font-semibold text-[#e72f91] hover:underline"
               onClick={() => navigate("/login")}
               type="button"
             >
@@ -316,15 +316,15 @@ function TutorAssessmentScoresPage() {
         <div className="mx-auto max-w-[1500px] px-8 pt-[27px] pb-8 max-[760px]:px-4">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h1 className="m-0 text-[28px] leading-tight font-semibold tracking-[-0.4px]">
+              <h1 className="m-0 text-[31px] leading-tight font-semibold tracking-[-0.4px]">
                 Assessment Scores
               </h1>
-              <p className="mt-2 mb-0 text-[13px] text-[#8592a7]">
+              <p className="mt-2 mb-0 text-[15px] text-[#8592a7]">
                 Capture your learners’ progress before and after tutoring.
               </p>
             </div>
             <span
-              className={`rounded-md px-4 py-1.5 text-[10px] font-semibold tracking-wide ${
+              className={`rounded-md px-4 py-1.5 text-[12px] font-semibold tracking-wide ${
                 submitted
                   ? "bg-[#e6f4ee] text-[#398b71]"
                   : "bg-[#f1f3f6] text-[#71809a]"
@@ -336,37 +336,37 @@ function TutorAssessmentScoresPage() {
 
           <section className="mt-6 grid grid-cols-3 rounded-lg border border-[#e1e7ef] bg-white px-4 py-[17px] max-[700px]:grid-cols-1 max-[700px]:gap-4">
             <div className="border-r border-[#e8edf2] px-1 max-[700px]:border-r-0">
-              <p className="m-0 text-[9px] font-semibold text-[#8592a7]">CLASS</p>
-              <p className="mt-2 mb-0 text-[14px] font-semibold">Grade 3 · Group A</p>
-              <p className="mt-1 mb-0 text-[10px] text-[#8592a7]">
+              <p className="m-0 text-[11px] font-semibold text-[#8592a7]">CLASS</p>
+              <p className="mt-2 mb-0 text-[16px] font-semibold">Grade 3 · Group A</p>
+              <p className="mt-1 mb-0 text-[12px] text-[#8592a7]">
                 Sample class · {tutorLearners.length} learners
               </p>
             </div>
             <div className="border-r border-[#e8edf2] px-5 max-[700px]:border-r-0 max-[700px]:px-1">
-              <p className="m-0 text-[9px] font-semibold text-[#8592a7]">SUBJECT</p>
-              <p className="mt-2 mb-0 text-[14px] font-semibold">
+              <p className="m-0 text-[11px] font-semibold text-[#8592a7]">SUBJECT</p>
+              <p className="mt-2 mb-0 text-[16px] font-semibold">
                 {assessmentDomain ?? "Assessment domain unavailable"}
               </p>
-              <p className="mt-1 mb-0 text-[10px] text-[#50aeb4]">
+              <p className="mt-1 mb-0 text-[12px] text-[#50aeb4]">
                 BKTK literacy domain · Scores sync to learner results when submitted
               </p>
             </div>
             <div className="px-5 max-[700px]:px-1">
-              <p className="m-0 text-[9px] font-semibold text-[#8592a7]">
+              <p className="m-0 text-[11px] font-semibold text-[#8592a7]">
                 SCORING SCALE
               </p>
-              <p className="mt-2 mb-0 text-[14px] font-semibold">
+              <p className="mt-2 mb-0 text-[16px] font-semibold">
                 {scoreLimit} points
               </p>
-              <p className="mt-1 mb-0 text-[10px] text-[#8592a7]">
+              <p className="mt-1 mb-0 text-[12px] text-[#8592a7]">
                 Use the same scale for both tests
               </p>
             </div>
           </section>
 
           <div className="mt-[25px] mb-[14px] flex items-center justify-between gap-4">
-            <h2 className="m-0 text-[15px] font-semibold">Learner scores</h2>
-            <div className="flex items-center gap-3 text-[11px] text-[#8592a7]">
+            <h2 className="m-0 text-[17px] font-semibold">Learner scores</h2>
+            <div className="flex items-center gap-3 text-[13px] text-[#8592a7]">
               <span
                 className="h-[5px] w-[82px] overflow-hidden rounded-full bg-[#e6ebf0]"
                 aria-label={`${completedCount} of ${tutorLearners.length} complete`}
@@ -384,22 +384,22 @@ function TutorAssessmentScoresPage() {
 
           <section className="overflow-hidden rounded-lg border border-[#e1e7ef] bg-white">
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[760px] border-collapse text-left text-[11px]">
+              <table className="w-full min-w-[760px] border-collapse text-left text-[13px]">
                 <thead className="bg-[#e82d91] text-white">
                   <tr>
-                    <th className="w-[30%] px-4 py-[13px] text-[10px] font-semibold">
+                    <th className="w-[30%] px-4 py-[13px] text-[12px] font-semibold">
                       Learner
                     </th>
-                    <th className="w-[19%] px-4 py-[13px] text-center text-[10px] font-semibold">
+                    <th className="w-[19%] px-4 py-[13px] text-center text-[12px] font-semibold">
                       Pre-assessment
                     </th>
-                    <th className="w-[19%] px-4 py-[13px] text-center text-[10px] font-semibold">
+                    <th className="w-[19%] px-4 py-[13px] text-center text-[12px] font-semibold">
                       Post-assessment
                     </th>
-                    <th className="w-[15%] px-4 py-[13px] text-center text-[10px] font-semibold">
+                    <th className="w-[15%] px-4 py-[13px] text-center text-[12px] font-semibold">
                       Improvement
                     </th>
-                    <th className="w-[17%] px-4 py-[13px] text-center text-[10px] font-semibold">
+                    <th className="w-[17%] px-4 py-[13px] text-center text-[12px] font-semibold">
                       Status
                     </th>
                   </tr>
@@ -417,7 +417,7 @@ function TutorAssessmentScoresPage() {
                       >
                         <td className="px-4 py-[10px]">
                           <span className="block font-semibold">{learner.name}</span>
-                          <span className="mt-1 block text-[9px] text-[#8592a7]">
+                          <span className="mt-1 block text-[11px] text-[#8592a7]">
                             {learner.id}
                           </span>
                         </td>
@@ -449,13 +449,13 @@ function TutorAssessmentScoresPage() {
                                   value={value}
                                 />
                                 {value !== "" && !invalid && (
-                                  <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-[10px] text-[#8592a7]">
+                                  <span className="pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-[12px] text-[#8592a7]">
                                     / {scoreLimit}
                                   </span>
                                 )}
                               </div>
                               {invalid && (
-                                <span className="mt-1 block text-[9px] text-red-600">
+                                <span className="mt-1 block text-[11px] text-red-600">
                                   Use a whole number from 0 to {scoreLimit}.
                                 </span>
                               )}
@@ -478,7 +478,7 @@ function TutorAssessmentScoresPage() {
                         </td>
                         <td className="px-4 py-[10px] text-center">
                           <span
-                            className={`inline-flex min-w-[112px] justify-center rounded-md px-3 py-1.5 text-[10px] font-semibold ${
+                            className={`inline-flex min-w-[112px] justify-center rounded-md px-3 py-1.5 text-[12px] font-semibold ${
                               status === "Complete"
                                 ? "bg-[#e6f4ee] text-[#398b71]"
                                 : "bg-[#fff5eb] text-[#b97822]"
@@ -495,24 +495,24 @@ function TutorAssessmentScoresPage() {
             </div>
           </section>
 
-          <p className="mt-3 mb-0 text-[10px] text-[#8592a7]">
+          <p className="mt-3 mb-0 text-[12px] text-[#8592a7]">
             Enter whole numbers from 0–{scoreLimit}. Leave unassessed scores blank, not 0.
           </p>
 
           <div className="mt-[10px] flex flex-wrap items-center justify-between gap-4">
-            <div aria-live="polite" className="text-[10px] text-[#8592a7]">
+            <div aria-live="polite" className="text-[12px] text-[#8592a7]">
               {notice || `Sample learners · Changes ${submitted ? "submitted" : "not yet saved"}`}
             </div>
             <div className="flex items-center gap-3">
               <button
-                className="h-[41px] rounded-md border border-[#f1c8dc] bg-white px-4 text-[11px] font-semibold text-[#c22a78] transition-colors hover:bg-[#fff5fa]"
+                className="h-[41px] rounded-md border border-[#f1c8dc] bg-white px-4 text-[13px] font-semibold text-[#c22a78] transition-colors hover:bg-[#fff5fa]"
                 onClick={resetDemoScores}
                 type="button"
               >
                 Reset demo scores
               </button>
               <button
-                className="h-[41px] rounded-md border border-[#e1e7ef] bg-white px-6 text-[11px] font-semibold text-[#405777] transition-colors hover:bg-[#f6f8fa] disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-[41px] rounded-md border border-[#e1e7ef] bg-white px-6 text-[13px] font-semibold text-[#405777] transition-colors hover:bg-[#f6f8fa] disabled:cursor-not-allowed disabled:opacity-50"
                 disabled={hasInvalidScores}
                 onClick={() => saveScores("draft")}
                 type="button"
@@ -520,7 +520,7 @@ function TutorAssessmentScoresPage() {
                 Save draft
               </button>
               <button
-                className="h-[41px] rounded-md bg-[#e82d91] px-7 text-[11px] font-semibold text-white transition-colors hover:bg-[#d82483] disabled:cursor-not-allowed disabled:opacity-50"
+                className="h-[41px] rounded-md bg-[#e82d91] px-7 text-[13px] font-semibold text-white transition-colors hover:bg-[#d82483] disabled:cursor-not-allowed disabled:opacity-50"
                 disabled={hasInvalidScores || !assessmentDomain}
                 onClick={() => saveScores("submit")}
                 type="button"
